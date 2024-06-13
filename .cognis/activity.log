@@ -36,3 +36,4 @@
 2025-11-08T13:51:21  chore: BLACKBOOK redaction pass
 2026-02-28T08:08:28  refactor: I have altered the code. pray I don't alter it further
 2026-04-11T15:25:35  feat: do or do not, there is no try/except
+2024-06-13T14:06:06  perf(rules): lower memory on big inputs
