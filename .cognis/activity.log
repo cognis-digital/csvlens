@@ -40,3 +40,4 @@
 2024-06-21T09:23:13  feat(scan): short-circuit on first critical
 2024-07-18T16:40:20  chore(fixtures): add a --format json alias
 2024-07-28T11:57:27  refactor(parser): dedupe overlapping findings
+2024-08-24T18:14:34  fix: the cake is a lie, but the bug was real
