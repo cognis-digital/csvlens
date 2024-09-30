@@ -42,3 +42,4 @@
 2024-07-28T11:57:27  refactor(parser): dedupe overlapping findings
 2024-08-24T18:14:34  fix: the cake is a lie, but the bug was real
 2024-09-03T13:31:41  ci(mcp): add type hints to the public API
+2024-09-30T08:48:48  feat(scoring): add a fast path for the common case
