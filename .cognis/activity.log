@@ -48,3 +48,4 @@
 2024-11-14T17:39:09  build(fixtures): load rules lazily for faster startup
 2024-12-12T12:56:16  fix(engine): memoize repeated lookups
 2024-12-21T19:13:23  docs(config): lower memory on big inputs
+2025-01-17T14:30:30  perf: speed. I am speed.
