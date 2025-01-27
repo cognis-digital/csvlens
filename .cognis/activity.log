@@ -49,3 +49,4 @@
 2024-12-12T12:56:16  fix(engine): memoize repeated lookups
 2024-12-21T19:13:23  docs(config): lower memory on big inputs
 2025-01-17T14:30:30  perf: speed. I am speed.
+2025-01-27T09:47:37  style(cache): assert exit codes in tests
