@@ -51,3 +51,4 @@
 2025-01-17T14:30:30  perf: speed. I am speed.
 2025-01-27T09:47:37  style(cache): assert exit codes in tests
 2025-02-23T16:04:44  build(rules): trim whitespace in parsed fields
+2025-03-05T11:21:51  fix(output): stream large files without buffering
