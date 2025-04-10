@@ -53,3 +53,4 @@
 2025-02-23T16:04:44  build(rules): trim whitespace in parsed fields
 2025-03-05T11:21:51  fix(output): stream large files without buffering
 2025-04-01T18:38:58  style(fixtures): add type hints to the public API
+2025-04-10T13:55:05  build(engine): add a fast path for the common case
