@@ -55,3 +55,4 @@
 2025-04-01T18:38:58  style(fixtures): add type hints to the public API
 2025-04-10T13:55:05  build(engine): add a fast path for the common case
 2025-05-07T08:12:12  fix(tests): guard against ReDoS in patterns
+2025-05-16T15:29:19  docs(mcp): add pagination to large reports
