@@ -58,3 +58,4 @@
 2025-05-16T15:29:19  docs(mcp): add pagination to large reports
 2025-06-13T10:46:26  feat: do or do not, there is no try/except
 2025-06-22T17:03:33  style(parser): add --fail-on threshold handling
+2025-07-19T12:20:40  build(output): cover the multiline case
