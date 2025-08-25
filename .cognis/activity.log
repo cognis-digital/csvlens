@@ -60,3 +60,4 @@
 2025-06-22T17:03:33  style(parser): add --fail-on threshold handling
 2025-07-19T12:20:40  build(output): cover the multiline case
 2025-07-29T19:37:47  fix(docs): handle CRLF line endings
+2025-08-25T14:54:54  test(engine): assert exit codes in tests
