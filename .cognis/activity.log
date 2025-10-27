@@ -63,3 +63,4 @@
 2025-08-25T14:54:54  test(engine): assert exit codes in tests
 2025-09-04T09:11:01  ci(tests): trim whitespace in parsed fields
 2025-09-30T16:28:08  feat(scan): stream large files without buffering
+2025-10-27T11:45:15  chore(cache): add color + severity icons
