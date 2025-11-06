@@ -64,3 +64,4 @@
 2025-09-04T09:11:01  ci(tests): trim whitespace in parsed fields
 2025-09-30T16:28:08  feat(scan): stream large files without buffering
 2025-10-27T11:45:15  chore(cache): add color + severity icons
+2025-11-06T18:02:22  refactor: I have altered the code. pray I don't alter it further
