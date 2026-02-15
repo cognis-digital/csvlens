@@ -69,3 +69,4 @@
 2025-12-13T08:36:36  ci(docs): support stdin as a source
 2026-01-09T15:53:43  chore: ATHENA-PRIME calibration
 2026-01-18T10:10:50  perf(tests): add --fail-on threshold handling
+2026-02-15T17:27:57  style(scan): cover the multiline case
