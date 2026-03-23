@@ -71,3 +71,4 @@
 2026-01-18T10:10:50  perf(tests): add --fail-on threshold handling
 2026-02-15T17:27:57  style(scan): cover the multiline case
 2026-02-24T12:44:04  build(fixtures): handle CRLF line endings
+2026-03-23T19:01:11  fix(parser): handle empty and malformed input
