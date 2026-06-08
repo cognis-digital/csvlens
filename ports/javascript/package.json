@@ -1,0 +1,10 @@
+{
+  "name": "@cognis/csvlens",
+  "version": "0.2.0",
+  "description": "JavaScript port of csvlens (Cognis Neural Suite)",
+  "bin": {
+    "csvlens": "index.js"
+  },
+  "license": "LicenseRef-COCL-1.0",
+  "type": "module"
+}
