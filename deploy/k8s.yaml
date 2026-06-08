@@ -1,0 +1,23 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata: { name: csvlens, labels: { app: csvlens } }
+spec:
+  replicas: 1
+  selector: { matchLabels: { app: csvlens } }
+  template:
+    metadata: { labels: { app: csvlens } }
+    spec:
+      containers:
+        - name: csvlens
+          image: ghcr.io/cognis-digital/csvlens:latest
+          ports: [{ containerPort: 8000 }]
+          resources:
+            requests: { cpu: "50m", memory: "64Mi" }
+            limits: { cpu: "500m", memory: "256Mi" }
+---
+apiVersion: v1
+kind: Service
+metadata: { name: csvlens }
+spec:
+  selector: { app: csvlens }
+  ports: [{ port: 80, targetPort: 8000 }]
