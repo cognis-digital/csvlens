@@ -36,9 +36,11 @@ single-binary data utility, viral
 <a name="features"></a>
 ## Features
 
-- ✅ Todo
-- ✅ Fixme
-- ✅ Xxx
+- ✅ Detect Dialect
+- ✅ Profile Csv
+- ✅ Clean Csv
+- ✅ Head Csv
+- ✅ Select Columns
 - ✅ Runs on Linux/macOS/Windows · Docker · devcontainer
 - ✅ Ports in Python, JavaScript, Go, and Rust (`ports/`)
 
