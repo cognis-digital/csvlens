@@ -16,7 +16,7 @@
 </div>
 
 ```bash
-pip install cognis-csvlens
+pip install "git+https://github.com/cognis-digital/csvlens.git"
 csvlens scan .            # → prioritized findings in seconds
 ```
 
@@ -50,7 +50,7 @@ single-binary data utility, viral
 ## Quick start
 
 ```bash
-pip install cognis-csvlens
+pip install "git+https://github.com/cognis-digital/csvlens.git"
 csvlens --version
 csvlens scan .                       # scan current project
 csvlens scan . --format json         # machine-readable
