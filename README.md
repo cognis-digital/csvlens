@@ -20,6 +20,40 @@ pip install cognis-csvlens
 csvlens scan .            # → prioritized findings in seconds
 ```
 
+## Usage — step by step
+
+1. Install the CLI (Python 3.9+):
+
+   ```bash
+   pip install csvlens        # or: pip install .   from a checkout
+   ```
+
+2. Profile a CSV — the `profile` subcommand infers column types and reports stats (nulls, distinct, min/max/mean):
+
+   ```bash
+   csvlens profile data.csv
+   ```
+
+3. Peek at rows or project columns by name:
+
+   ```bash
+   csvlens head data.csv -n 20
+   csvlens select data.csv -c name,email,signup_date -n 100
+   ```
+
+4. Clean a file — trim, dedupe, drop empty rows, and fill nulls, writing to an output path:
+
+   ```bash
+   csvlens clean data.csv -o clean.csv --fill-null NA
+   ```
+
+5. Read profiles programmatically with the global `--format json` flag (it precedes the subcommand) and gate data quality in CI:
+
+   ```bash
+   csvlens --format json profile data.csv | jq '.column_stats[] | select(.nulls > 0)'
+   ```
+
+
 ## Contents
 
 - [Why csvlens?](#why) · [Features](#features) · [Quick start](#quick-start) · [Example](#example) · [Architecture](#architecture) · [AI stack](#ai-stack) · [How it compares](#how-it-compares) · [Integrations](#integrations) · [Install anywhere](#install-anywhere) · [Related](#related) · [Contributing](#contributing)
