@@ -124,6 +124,9 @@ def main(argv: Optional[List[str]] = None) -> int:
             return 0
 
         if args.command == "head":
+            if args.rows < 1:
+                print(f"error: --rows/-n must be at least 1, got {args.rows}", file=sys.stderr)
+                return 2
             res = head_csv(args.path, n=args.rows, delimiter=args.delimiter)
             if as_json:
                 print(json.dumps(res, indent=2))
@@ -133,6 +136,12 @@ def main(argv: Optional[List[str]] = None) -> int:
 
         if args.command == "select":
             cols = [c.strip() for c in args.columns.split(",") if c.strip()]
+            if not cols:
+                print("error: --columns/-c requires at least one non-empty column name", file=sys.stderr)
+                return 2
+            if args.rows is not None and args.rows < 1:
+                print(f"error: --rows/-n must be at least 1, got {args.rows}", file=sys.stderr)
+                return 2
             res = select_columns(args.path, cols, delimiter=args.delimiter, n=args.rows)
             if as_json:
                 print(json.dumps(res, indent=2))
@@ -142,6 +151,12 @@ def main(argv: Optional[List[str]] = None) -> int:
 
     except FileNotFoundError:
         print(f"error: file not found: {args.path}", file=sys.stderr)
+        return 2
+    except IsADirectoryError:
+        print(f"error: path is a directory, not a file: {args.path}", file=sys.stderr)
+        return 2
+    except (ValueError, TypeError) as e:
+        print(f"error: invalid argument — {e}", file=sys.stderr)
         return 2
     except KeyError as e:
         print(f"error: {e.args[0] if e.args else e}", file=sys.stderr)

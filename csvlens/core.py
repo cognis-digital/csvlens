@@ -121,7 +121,16 @@ def detect_dialect(sample: str) -> str:
 def _open_reader(
     path: str, delimiter: Optional[str]
 ) -> Tuple[str, Iterator[List[str]], "io.TextIOBase"]:
-    fh = open(path, "r", newline="", encoding="utf-8-sig", errors="replace")
+    if not isinstance(path, str) or not path:
+        raise ValueError("path must be a non-empty string")
+    if delimiter is not None and len(delimiter) != 1:
+        raise ValueError(
+            f"delimiter must be a single character, got {delimiter!r} (length {len(delimiter)})"
+        )
+    try:
+        fh = open(path, "r", newline="", encoding="utf-8-sig", errors="replace")
+    except IsADirectoryError:
+        raise IsADirectoryError(f"path is a directory, not a file: {path}")
     if delimiter is None:
         head = fh.read(65536)
         fh.seek(0)
@@ -310,6 +319,10 @@ def clean_csv(
 
 def head_csv(path: str, n: int = 10, delimiter: Optional[str] = None) -> dict:
     """Return the first n data rows plus the header."""
+    if not isinstance(n, int) or isinstance(n, bool):
+        raise TypeError(f"n must be an integer, got {type(n).__name__}")
+    if n < 1:
+        raise ValueError(f"n must be at least 1, got {n}")
     delim, reader, fh = _open_reader(path, delimiter)
     try:
         try:
@@ -333,6 +346,13 @@ def select_columns(
     n: Optional[int] = None,
 ) -> dict:
     """Project a subset of columns (by name) from the CSV."""
+    if not columns:
+        raise ValueError("columns list must not be empty")
+    if n is not None:
+        if not isinstance(n, int) or isinstance(n, bool):
+            raise TypeError(f"n must be an integer, got {type(n).__name__}")
+        if n < 1:
+            raise ValueError(f"n must be at least 1, got {n}")
     delim, reader, fh = _open_reader(path, delimiter)
     try:
         try:
