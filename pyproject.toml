@@ -34,3 +34,6 @@ csvlens = "csvlens.cli:main"
 
 [tool.hatch.build.targets.wheel]
 packages = ["csvlens"]
+
+[tool.hatch.metadata]
+allow-direct-references = true
