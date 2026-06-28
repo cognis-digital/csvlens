@@ -1,0 +1,19 @@
+$ csvlens-emit --help
+
+usage: csvlens [-h] [--version] [--format {table,json}]
+               {profile,clean,head,select} ...
+
+Fast CLI for profiling and cleaning huge CSV files.
+
+positional arguments:
+  {profile,clean,head,select}
+    profile             profile column types and stats
+    clean               trim, dedupe, drop-empty, fill nulls
+    head                show the first N rows
+    select              project columns by name
+
+options:
+  -h, --help            show this help message and exit
+  --version             show program's version number and exit
+  --format {table,json}
+                        output format (default: table)

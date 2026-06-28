@@ -20,6 +20,62 @@ pip install cognis-csvlens
 csvlens scan .            # → prioritized findings in seconds
 ```
 
+
+<!-- cognis:example:start -->
+## 🔎 Example output
+
+Real, reproducible output from the tool — runs offline:
+
+```console
+$ csvlens-emit --version
+csvlens 0.1.0
+```
+
+```console
+$ csvlens-emit --help
+usage: csvlens [-h] [--version] [--format {table,json}]
+               {profile,clean,head,select} ...
+
+Fast CLI for profiling and cleaning huge CSV files.
+
+positional arguments:
+  {profile,clean,head,select}
+    profile             profile column types and stats
+    clean               trim, dedupe, drop-empty, fill nulls
+    head                show the first N rows
+    select              project columns by name
+
+options:
+  -h, --help            show this help message and exit
+  --version             show program's version number and exit
+  --format {table,json}
+                        output format (default: table)
+```
+
+> Blocks above are real `csvlens` output — reproduce them from a clone.
+
+**Sample result format** _(illustrative values — run on your own data for real findings):_
+
+```
+{
+"finding": {
+"id": "1234567890",
+"name": "Suspicious Network Traffic",
+"description": "Network traffic detected from unknown IP address",
+"severity": "medium",
+"created_at": "2023-02-20T14:30:00Z"
+},
+"indicators": [
+{
+"type": "ip",
+"value": "192.168.1.100"
+}
+]
+}
+```
+
+<!-- cognis:example:end -->
+
 ## Usage — step by step
 
 1. Install the CLI (Python 3.9+):
